@@ -20,7 +20,7 @@ function listOffers(priceSearchListResponse) {
   viewAllBtn.className = "view-all-btn";
   viewAllBtn.href = viewAllUrl;
   viewAllBtn.target = "_blank";
-  viewAllBtn.textContent = "Vairāk";
+  viewAllBtn.textContent = "Rohkem";
 
   listDiv.appendChild(viewAllBtn);
 }
@@ -29,7 +29,7 @@ function createProductCard(product) {
   const cardDiv = document.createElement("div");
   cardDiv.className = "card";
 
-  const redirectUrl = `https://www.coraltravel.lv/hotels${product?.offers[0]?.link?.redirectionUrl}/?qp=${product?.offers[0]?.link?.queryParam}&p=1&w=0&s=0&ws=10`;
+  const redirectUrl = `https://www.coraltravel.ee/hotels${product?.offers[0]?.link?.redirectionUrl}/?qp=${product?.offers[0]?.link?.queryParam}&p=1&w=0&s=0&ws=10`;
 
   cardDiv.innerHTML = `
     <div class="info">
@@ -146,7 +146,7 @@ function createProductCard(product) {
                         </clipPath>
                       </defs>
                     </svg>
-                    <span>${product?.offers[0]?.stayNights} n.</span>
+                    <span>${product?.offers[0]?.stayNights} ööd</span>
                   </div>
                   <div class="item">
                     <svg
@@ -190,16 +190,16 @@ function createProductCard(product) {
             <div class="price-info">
               <div class="top">
                 <div class="price">
-                  <span class="price-from">cena no</span>
+                  <span class="price-from">hind alates</span>
                   ${getOldPrice(product?.offers[0]?.price)}
                   
                   <span class="current-price">${getFormattedPrice(
                     product?.offers[0]?.price?.amount
-                  )} € / pakete </span>
+                  )} € / reisipakett</span>
                   <span class="current-price-per-person">
                     ${getFormattedPrice(
                       product?.offers[0]?.price?.perPersonAmount
-                    )} € / personai
+                    )} € / in
                   </span>
                 </div>
                 <div class="additional-price-info">
@@ -247,11 +247,11 @@ function createProductCard(product) {
                         </clipPath>
                       </defs>
                     </svg>
-                    <span>Lidojums iekļauts</span>
+                    <span>Lennupiletid hinna sees</span>
                   </div>
                 </div>
               </div>
-              <a href=${redirectUrl} target="_blank" class="choose-button">Atlasīt viesnīcu</a>
+              <a href=${redirectUrl} target="_blank" class="choose-button">Vali</a>
             </div>
             `;
 

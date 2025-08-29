@@ -38,7 +38,7 @@ const generatePayloadPriceSearchEncrypt = () => {
 };
 
 const generatePayloadPriceSearchList = (priceSearchEncryptResponse) => {
-  viewAllUrl = `https://www.coraltravel.lv${priceSearchEncryptResponse.result.redirectionUrl}?qp=${priceSearchEncryptResponse.result.queryParam}&p=1&w=0&s=0&ws=10`;
+  viewAllUrl = `https://www.coraltravel.ee${priceSearchEncryptResponse.result.redirectionUrl}?qp=${priceSearchEncryptResponse.result.queryParam}&p=1&w=0&s=0&ws=10`;
 
   const payload = {
     queryParam: priceSearchEncryptResponse.result.queryParam,
@@ -63,7 +63,7 @@ const getDestinationObj = () =>
 
 const getDestinationLocation = () => {
   const destinationObj = getDestinationObj();
-
+  console.log("dest", destinationObj);
   if (!destinationObj.children) {
     return [
       {
@@ -74,10 +74,36 @@ const getDestinationLocation = () => {
       },
     ];
   }
+
+  if (destinationObj.country === "montenegro") {
+    console.log("montenegro");
+    const additionalValues = destinationsConstants.find(
+      (destination) => destination.friendlyUrl === "tivat"
+    );
+    console.log("add", additionalValues);
+    return [
+      {
+        id: destinationObj.id,
+        type: destinationObj.type,
+        name: destinationObj.name,
+        friendlyUrl: destinationObj.friendlyUrl,
+        children: destinationObj.children,
+      },
+      {
+        id: additionalValues.id,
+        type: additionalValues.type,
+        name: additionalValues.name,
+        friendlyUrl: additionalValues.friendlyUrl,
+        children: additionalValues.children,
+      },
+    ];
+  }
   const matchedDestination = offersObj.destinations.find(
     (dest) =>
-      dest.destinationDisplayName.toLowerCase() ===
-        destinationObj.friendlyUrl &&
+      dest.destinationDisplayName
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase() === destinationObj.friendlyUrl &&
       dest.destination?.some((city) =>
         city.beginDates?.filter(
           (dateObj) => dateObj.date === selectedValues.date

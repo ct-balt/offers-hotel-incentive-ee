@@ -1,29 +1,29 @@
 const destinationsConstants = [
   {
-    country: "turcija",
-    name: "Turcija",
-    friendlyUrl: "turcija",
+    country: "turgi",
+    name: "Türgi",
+    friendlyUrl: "turgi",
     id: "1-0",
     type: 0,
     children: [
       {
         id: "5-3",
         type: 3,
-        name: "Antālija",
-        friendlyUrl: "antalija",
+        name: "Antalya",
+        friendlyUrl: "antalya",
       },
       {
         id: "1-3",
         type: 3,
-        name: "Bodruma",
-        friendlyUrl: "bodruma",
+        name: "Bodrum",
+        friendlyUrl: "bodrum",
       },
     ],
   },
   {
-    country: "griekija",
-    name: "Grieķija",
-    friendlyUrl: "griekija",
+    country: "kreeka",
+    name: "Kreeka",
+    friendlyUrl: "kreeka",
     id: "43-0",
     type: 0,
     children: [
@@ -33,12 +33,18 @@ const destinationsConstants = [
         name: "Heraklion",
         friendlyUrl: "heraklion",
       },
+      {
+        id: "773-3",
+        type: 3,
+        name: "Rhodes",
+        friendlyUrl: "rhodes",
+      },
     ],
   },
   {
-    country: "egipte",
-    name: "Ēģipte",
-    friendlyUrl: "egipte",
+    country: "egiptus",
+    name: "Egiptus",
+    friendlyUrl: "egiptus",
     id: "12-0",
     type: 0,
     children: [
@@ -57,11 +63,45 @@ const destinationsConstants = [
     ],
   },
   {
-    country: "apvienotiearabuemirati",
-    name: "Apvienotie Arābu Emirāti",
-    friendlyUrl: "apvienotiearabuemirati",
-    id: "31-0",
+    country: "montenegro",
+    name: "Montenegro",
+    friendlyUrl: "montenegro",
+    id: "80-0",
     type: 0,
-    children: null,
+    children: [
+      {
+        id: "11911-3",
+        type: 3,
+        name: "Tivat",
+        friendlyUrl: "tivat",
+        parent: {
+          id: "80",
+          type: 0,
+          name: "Montenegro",
+          countryId: "80-0",
+        },
+      },
+    ],
+  },
+  {
+    country: "tivat",
+    name: "Tivat",
+    friendlyUrl: "tivat",
+    id: "11911-3",
+    type: 3,
+    children: [
+      {
+        id: "10881-5",
+        type: 5,
+        name: "Dubrovnik",
+        friendlyUrl: "dubrovnik",
+        parent: {
+          id: "11911",
+          type: 3,
+          name: "Horvaatia",
+          countryId: "108-0",
+        },
+      },
+    ],
   },
 ];

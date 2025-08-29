@@ -14,7 +14,7 @@ async function fetchOffers() {
 
   try {
     const priceSearchEncryptResponse = await callApi(
-      "https://www.coraltravel.lv/endpoints/PackageTourHotelProduct/PriceSearchEncrypt",
+      "https://www.coraltravel.ee/endpoints/PackageTourHotelProduct/PriceSearchEncrypt",
       payload,
       { signal }
     );
@@ -26,7 +26,7 @@ async function fetchOffers() {
     );
 
     const priceSearchListResponse = await callApi(
-      "https://www.coraltravel.lv/endpoints/PackageTourHotelProduct/PriceSearchList",
+      "https://www.coraltravel.ee/endpoints/PackageTourHotelProduct/PriceSearchList",
       priceSearchPayload,
       { signal }
     );

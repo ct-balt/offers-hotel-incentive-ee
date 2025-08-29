@@ -16,7 +16,7 @@
   </head>
   <body>
     <section class="offers-incentive">
-      <h2>Pēdējā brīža piedāvājumi</h2>
+      <h2>Viimase hetke pakkumised</h2>
       <div class="selector">
         <div class="destination-selector"></div>
         <div class="departure-selector-wrapper">
@@ -41,7 +41,7 @@
         <div class="side-selector">
           <div class="wrapper">
             <div class="date-selector">
-              <span>Izvēlies izlidošanas datumu</span>
+              <span>Vali väljumiskuupäev</span>
               <div class="date-items"></div>
             </div>
             <div class="separator"></div>
@@ -49,7 +49,7 @@
               type="button"
               class="additional-filters-button"
               onclick="toggleFilters()">
-              <span>Filtri</span
+              <span>Filtrid</span
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -64,7 +64,7 @@
             </button>
             <div class="additional-filters">
               <div class="hotel-category">
-                <span>Viesnīcas kategorija</span>
+                <span>Hotelli kategooria</span>
                 <div class="items"></div>
               </div>
               <div class="buttons">
@@ -72,13 +72,13 @@
                   type="button"
                   class="remove-filters"
                   onclick="removeFilters()">
-                  Attiestatīt filtrus
+                  Tühjenda
                 </button>
                 <button
                   type="button"
                   class="submit-filters"
                   onclick="applyFilters()">
-                  Piemērot
+                  Filtreeri
                 </button>
               </div>
             </div>
@@ -90,68 +90,126 @@
       var offers = {
         destinations: [
           {
-            destinationDisplayName: "Turcija",
+            destinationDisplayName: "Türgi",
             destination: [
               {
-                name: "antalija",
+                name: "antalya",
                 departures: {
-                  displayName: ["Rīgas"],
-                  name: ["riga"],
+                  displayName: ["Tallinnast"],
+                  name: ["tallinn"],
                 },
                 beginDates: [
                   {
-                    date: "2025-09-03",
-                    stayNights: [{ value: 7 }],
-                    departures: ["riga"],
+                    date: "2025-08-30",
+                    stayNights: [{ value: 6 }, { value: 13 }],
+                    departures: ["tallinn"],
                   },
                   {
-                    date: "2025-09-04",
+                    date: "2025-09-05",
                     stayNights: [{ value: 7 }],
-                    departures: ["riga"],
+                    departures: ["tallinn"],
                   },
                   {
-                    date: "2025-09-06",
-                    stayNights: [{ value: 6 }],
-                    departures: ["riga"],
+                    date: "2025-09-07",
+                    stayNights: [{ value: 7 }],
+                    departures: ["tallinn"],
                   },
                   {
-                    date: "2025-09-12",
+                    date: "2025-09-09",
                     stayNights: [{ value: 7 }],
-                    departures: ["riga"],
+                    departures: ["tallinn"],
                   },
                   {
                     date: "2025-09-13",
                     stayNights: [{ value: 7 }],
-                    departures: ["riga"],
+                    departures: ["tallinn"],
+                  },
+                ],
+              },
+              {
+                name: "bodrum",
+                departures: {
+                  displayName: ["Tallinnast"],
+                  name: ["tallinn"],
+                },
+                beginDates: [
+                  {
+                    date: "2025-09-16",
+                    stayNights: [{ value: 6 }],
+                    departures: ["tallinn"],
                   },
                   {
-                    date: "2025-09-18",
-                    stayNights: [{ value: 3 }, { value: 6 }, { value: 7 }],
-                    departures: ["riga"],
+                    date: "2025-09-23",
+                    stayNights: [{ value: 6 }],
+                    departures: ["tallinn"],
                   },
                 ],
               },
             ],
           },
           {
-            destinationDisplayName: "Grieķija",
+            destinationDisplayName: "Kreeka",
             destination: [
               {
                 name: "heraklion",
                 departures: {
-                  displayName: ["Rīgas"],
-                  name: ["riga"],
+                  displayName: ["Tallinnast"],
+                  name: ["tallinn"],
                 },
                 beginDates: [
                   {
-                    date: "2025-09-13",
+                    date: "2025-09-02",
                     stayNights: [{ value: 7 }],
-                    departures: ["riga"],
+                    departures: ["tallinn"],
                   },
                   {
-                    date: "2025-09-14",
+                    date: "2025-09-06",
+                    stayNights: [{ value: 7 }, { value: 11 }],
+                    departures: ["tallinn"],
+                  },
+                  {
+                    date: "2025-09-20",
+                    stayNights: [{ value: 3 }, { value: 7 }],
+                    departures: ["tallinn"],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            destinationDisplayName: "Montenegro",
+            destination: [
+              {
+                name: "montenegro",
+                departures: {
+                  displayName: ["Tallinnast"],
+                  name: ["tallinn"],
+                },
+                beginDates: [
+                  {
+                    date: "2025-08-31",
                     stayNights: [{ value: 7 }],
-                    departures: ["riga"],
+                    departures: ["tallinn"],
+                  },
+                  {
+                    date: "2025-09-01",
+                    stayNights: [{ value: 7 }],
+                    departures: ["tallinn"],
+                  },
+                  {
+                    date: "2025-09-07",
+                    stayNights: [{ value: 4 }, { value: 7 }],
+                    departures: ["tallinn"],
+                  },
+                  {
+                    date: "2025-09-08",
+                    stayNights: [{ value: 3 }, { value: 14 }],
+                    departures: ["tallinn"],
+                  },
+                  {
+                    date: "2025-09-11",
+                    stayNights: [{ value: 3 }, { value: 10 }, { value: 11 }],
+                    departures: ["tallinn"],
                   },
                 ],
               },
