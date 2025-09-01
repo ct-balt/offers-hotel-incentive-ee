@@ -63,7 +63,6 @@ const getDestinationObj = () =>
 
 const getDestinationLocation = () => {
   const destinationObj = getDestinationObj();
-  console.log("dest", destinationObj);
   if (!destinationObj.children) {
     return [
       {
@@ -76,11 +75,9 @@ const getDestinationLocation = () => {
   }
 
   if (destinationObj.country === "montenegro") {
-    console.log("montenegro");
     const additionalValues = destinationsConstants.find(
       (destination) => destination.friendlyUrl === "tivat"
     );
-    console.log("add", additionalValues);
     return [
       {
         id: destinationObj.id,
