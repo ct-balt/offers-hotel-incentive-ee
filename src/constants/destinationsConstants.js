@@ -21,6 +21,13 @@ const destinationsConstants = [
     ],
   },
   {
+    country: "tuneesia",
+    name: "Tuneesia",
+    friendlyUrl: "tuneesia",
+    id: "34-0",
+    type: 0,
+  },
+  {
     country: "kreeka",
     name: "Kreeka",
     friendlyUrl: "kreeka",
