@@ -112,4 +112,19 @@ const destinationsConstants = [
       },
     ],
   },
+  {
+    country: "hispaania",
+    name: "Hispaania",
+    friendlyUrl: "hispaania",
+    id: "42-0",
+    type: 0,
+    children: [
+      {
+        id: "3376-3",
+        type: 3,
+        name: "Tenerife",
+        friendlyUrl: "tenerife",
+      },
+    ],
+  },
 ];
