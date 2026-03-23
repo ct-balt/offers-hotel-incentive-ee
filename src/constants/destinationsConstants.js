@@ -125,6 +125,18 @@ const destinationsConstants = [
         name: "Tenerife",
         friendlyUrl: "tenerife",
       },
+      {
+        id: "112-3-42-0",
+        type: 3,
+        name: "Barcelona",
+        friendlyUrl: "barcelona",
+      },
+      {
+        id: "12049-3-42-0",
+        type: 3,
+        name: "Mallorca",
+        friendlyUrl: "mallorca",
+      },
     ],
   },
 ];
