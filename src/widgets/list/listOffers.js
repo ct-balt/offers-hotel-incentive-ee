@@ -13,7 +13,7 @@ function listOffers(priceSearchListResponse) {
   offersDiv.appendChild(listDiv);
 
   products.forEach((product) =>
-    listDiv.appendChild(createProductCard(product))
+    listDiv.appendChild(createProductCard(product)),
   );
 
   const viewAllBtn = document.createElement("a");
@@ -29,7 +29,7 @@ function createProductCard(product) {
   const cardDiv = document.createElement("div");
   cardDiv.className = "card";
 
-  const redirectUrl = `https://www.coraltravel.ee/hotels${product?.offers[0]?.link?.redirectionUrl}/?qp=${product?.offers[0]?.link?.queryParam}&p=1&w=0&s=0&ws=10`;
+  const redirectUrl = `https://www.coraltravel.ee/hotels${product?.offers[0]?.link?.redirectionUrl}/?${product?.offers[0]?.link?.queryParam}&p=1&w=0&s=0&ws=10`;
 
   cardDiv.innerHTML = `
     <div class="info">
@@ -194,11 +194,11 @@ function createProductCard(product) {
                   ${getOldPrice(product?.offers[0]?.price)}
                   
                   <span class="current-price">${getFormattedPrice(
-                    product?.offers[0]?.price?.amount
+                    product?.offers[0]?.price?.amount,
                   )} € / reisipakett</span>
                   <span class="current-price-per-person">
                     ${getFormattedPrice(
-                      product?.offers[0]?.price?.perPersonAmount
+                      product?.offers[0]?.price?.perPersonAmount,
                     )} € / in
                   </span>
                 </div>
@@ -275,10 +275,10 @@ const getOldPrice = (priceObj) => {
     return `
     <div class="old-price-wrapper">
       <span class="old-price">${getFormattedPrice(
-        priceObj.oldAmount
+        priceObj.oldAmount,
       )} € / pakete</span>
       <span class="discount">- ${Math.floor(
-        priceObj.oldAmount - priceObj.amount
+        priceObj.oldAmount - priceObj.amount,
       )} €</span>
     </div>
     
